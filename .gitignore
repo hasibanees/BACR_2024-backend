@@ -1,0 +1,7 @@
+node_modules/
+.env.development.local
+.env.local
+.env
+.env.test.local
+.env.production.local
+uploads/
