@@ -20,7 +20,7 @@ export const createContactMessage = async (req, res) => {
       port: 587,
       secure: false, // use SSL
       auth: {
-        user: process.env.SERVERNAME,
+        user: process.env.USERNAME,
         pass: process.env.PASSWORD,
       }
     });

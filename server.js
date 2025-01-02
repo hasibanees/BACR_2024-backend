@@ -30,7 +30,6 @@ import dotenv from 'dotenv';
 
 const app = express();
 dotenv.config();
-console.log("SS", process.env.SERVERNAME);
 
 export const mixpanel = Mixpanel.init("df6068b6944b69e78c4324ee5a9edeae");
 
