@@ -9,7 +9,7 @@ import clientRoutes from "./Routes/clientRoutes.js";
 import productRoutes from "./Routes/productRoutes.js";
 import blogRoutes from "./Routes/blogRoutes.js";
 import CategoryRoutes from "./Routes/CategoryRoutes.js";
-import contactRoutes from "./Routes/contactRoutes.js";
+// import contactRoutes from "./Routes/contactRoutes.js";
 import userRoutes from "./Routes/userRoutes.js";
 import rolesRoutes from "./Routes/rolesRoutes.js";
 import TagRoutes from "./Routes/TagRoutes.js";
