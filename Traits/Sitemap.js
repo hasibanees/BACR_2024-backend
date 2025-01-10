@@ -23,7 +23,7 @@ const generateSitemap = async () => {
       const changeFreq = blog.status === 'publish' ? 'daily' : defaultChangeFrequency;
 
       return {
-        loc: `${baseUrl}/api/blog/${blog._id}`,
+        loc: `${baseUrl}/api/blog/${blog.name}`,
         lastmod: blog.updatedAt.toISOString(),
         priority,
         changefreq: changeFreq,
