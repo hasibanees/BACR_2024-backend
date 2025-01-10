@@ -43,7 +43,9 @@ const storage =BlogStorage;
 
 const upload = multer({
   storage,
-  limits: { fileSize: 5 * 1024 * 1024 }, // 2MB limit
+  limits: { fileSize: 5 * 1024 * 1024 ,
+    fieldSize: 20 * 1024 * 1024
+  }, // 2MB limit
   fileFilter: (req, file, cb) => {
     const isImage = /jpeg|jpg|png/.test(file.mimetype);
     // const isExcelFile = file.mimetype === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
