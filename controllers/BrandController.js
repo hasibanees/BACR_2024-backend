@@ -17,7 +17,8 @@ import { BrandStorage } from "../utils/fileUploder.js";
 const storage =BrandStorage;
 const upload = multer({
   storage,
-  limits: { fileSize: 2 * 1024 * 1024 },  // 2MB limit
+  limits: { fileSize: 2 * 1024 * 1024,
+    fieldSize: 20 * 1024 * 1024 },  // 2MB limit
   fileFilter: (req, file, cb) => {
     const fileTypes = /jpeg|jpg|png/;
     const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());

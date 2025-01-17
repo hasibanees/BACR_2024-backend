@@ -7,6 +7,7 @@ import multer from "multer";
 import fs from 'fs';
 import path from "path";
 import nodemailer from "nodemailer";
+import sanitizeHtml from "sanitize-html";
 import schedule from "node-schedule";
 import xml2js from 'xml2js';
 import { BlogStorage } from "../utils/fileUploder.js";
@@ -433,6 +434,15 @@ export const updateBlog = async (req, res) => {
     
   //   emailString = validEmails.join(',');
   // }  
+  let sanitizedDescription;
+  if (description){
+   sanitizedDescription = sanitizeHtml(req.body.description, {
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
+    allowedAttributes: {
+        img: ['src', 'alt', 'class'], // Ensure 'class' is allowed
+    },
+});
+}
     let uniqueUrl = url;
     let suffix = 1; // Start suffix from 1
     // Check for existing URLs and generate a new one if necessary

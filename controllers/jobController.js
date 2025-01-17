@@ -13,7 +13,8 @@ const storage = JobStorage;
 // });
 const upload = multer({
   storage,
-  limits: { fileSize: 2 * 1024 * 1024 },  // 1MB limit
+  limits: { fileSize: 2 * 1024 * 1024 ,
+    fieldSize: 20 * 1024 * 1024},  // 1MB limit
   fileFilter: (req, file, cb) => {
     const fileTypes = /doc|pdf/;
     const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
